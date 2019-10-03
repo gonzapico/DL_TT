@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DL_TT</string>
+    <string name="error_message">Se ha producido un error, inténtalo de nuevo más tarde.</string>
+</resources>

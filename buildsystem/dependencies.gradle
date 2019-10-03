@@ -1,0 +1,63 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    //Android
+    androidBuildToolsVersion = "28.0.3"
+    androidMinSdkVersion = 19
+    androidTargetSdkVersion = 28
+    androidCompileSdkVersion = 28
+
+    //Libraries
+
+    // Presentation
+    appcompatVersion = '1.1.0'
+    supportVersion = '1.0.0'
+    picassoVersion = '2.71828'
+
+    // Data
+    retrofitVersion = '2.6.2'
+    okHttpLoggingVersion = '3.9.1'
+    okHttpVersion = '3.10.0'
+    gsonVersion = '2.8.5'
+    roomVersion = '2.2.0-rc01'
+
+    // Test
+    junitVersion = '4.12'
+    testRunnerVersion = '1.3.0-alpha02'
+    espressoVersion = '3.2.0'
+
+    dataDependencies = [
+            retrofit             : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitConverterGson: "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            okHttpLogging        : "com.squareup.okhttp3:logging-interceptor:${okHttpLoggingVersion}",
+            okHttp               : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
+            gson                 : "com.google.code.gson:gson:${gsonVersion}",
+            roomRuntime          : "androidx.room:room-runtime:$roomVersion",
+            roomCompiler         : "androidx.room:room-compiler:$roomVersion",
+            roomKtx              : "androidx.room:room-ktx:$roomVersion",
+            roomTest             : "androidx.room:room-testing:$roomVersion"
+    ]
+
+
+    domainDependencies = [
+    ]
+
+    presentationDependencies = [
+            appcompat    : "androidx.appcompat:appcompat:${appcompatVersion}",
+            coreKtx      : "androidx.core:core-ktx:${appcompatVersion}",
+            legacySupport: "androidx.legacy:legacy-support-v4:${supportVersion}",
+            recyclerView : "androidx.recyclerview:recyclerview:${supportVersion}",
+            material     : "com.google.android.material:material:${supportVersion}",
+            picasso      : "com.squareup.picasso:picasso:${picassoVersion}"
+    ]
+
+    testDependencies = [
+            junit       : "junit:junit:${junitVersion}",
+            testRunner  : "androidx.test:runner:${testRunnerVersion}",
+            espressoCore: "androidx.test.espresso:espresso-core:${espressoVersion}"
+    ]
+}
