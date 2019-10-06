@@ -48,7 +48,6 @@ class MovieDetailPresenterTest {
             .thenReturn(expectedInfo)
         getMovieDetailTest()
         verify(view).renderMovie(expectedInfo)
-        verify(view).hideLoading()
     }
 
     fun getMovieDetailTest() {

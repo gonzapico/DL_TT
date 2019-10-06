@@ -41,6 +41,7 @@ class MovieListPresenterTest {
         Mockito.`when`(mockMovieListUseCase.getMovieList())
             .thenReturn(expectedInfo)
         getMovieListTest()
+        Mockito.verify(view).showLoading()
         Mockito.verify(view).renderMovieList(expectedInfo)
         Mockito.verify(view).hideLoading()
     }
