@@ -8,7 +8,5 @@ import kotlinx.android.synthetic.main.item_list_content.view.*
 
 class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val title: TextView = view.title
-    val director: TextView = view.director
-    val timeDuration: TextView = view.time_duration
-    val ratingList: TextView = view.rating_list
+    val year: TextView = view.year
 }

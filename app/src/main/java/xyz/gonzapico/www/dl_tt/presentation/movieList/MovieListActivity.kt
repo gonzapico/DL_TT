@@ -2,8 +2,6 @@ package xyz.gonzapico.www.dl_tt.presentation.movieList
 
 import android.content.pm.ActivityInfo
 import android.os.Bundle
-import android.view.View
-import android.widget.ProgressBar
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_item_list.*
 import kotlinx.android.synthetic.main.item_list.*
@@ -23,6 +21,9 @@ import xyz.gonzapico.www.dl_tt.presentation.toggle
  * item details side-by-side using two vertical panes.
  */
 class MovieListActivity : BaseActivity(), MovieListView {
+    val MOVIE_LIST_LOADED = "movieListLoaded"
+    var movieListLoaded = false
+
     private val movieListPresenter: MovieListPresenter by inject()
 
     override fun showLoading() {
@@ -58,7 +59,7 @@ class MovieListActivity : BaseActivity(), MovieListView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if(resources.getBoolean(R.bool.portrait_only)){
+        if (resources.getBoolean(R.bool.portrait_only)) {
             requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
         }
 
@@ -77,17 +78,21 @@ class MovieListActivity : BaseActivity(), MovieListView {
             twoPane = true
         }
 
-        setupRecyclerView()
-        movieListPresenter.getMovieList(this)
-
     }
 
-    private fun setupRecyclerView() {
-        item_list.adapter =
-            MovieRecyclerViewAdapter(
-                this,
-                MovieList(emptyList()),
-                twoPane
-            )
+    override fun onResume() {
+        super.onResume()
+        movieListPresenter.getMovieList(this)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putBoolean(MOVIE_LIST_LOADED, movieListLoaded)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+
+        movieListLoaded = savedInstanceState?.getBoolean(MOVIE_LIST_LOADED) ?: false
     }
 }

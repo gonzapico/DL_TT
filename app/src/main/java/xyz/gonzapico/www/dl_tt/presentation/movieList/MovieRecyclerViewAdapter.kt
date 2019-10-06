@@ -30,9 +30,7 @@ class MovieRecyclerViewAdapter(
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val item = movieList?.movies?.get(position)
         holder.title.text = item?.title
-        holder.director.text = item?.director
-        holder.ratingList.text = item?.ratingList
-        holder.timeDuration.text = item?.timeDuration
+        holder.year.text = item?.year
 
         with(holder.itemView) {
             tag = item

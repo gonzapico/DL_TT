@@ -19,6 +19,7 @@ fun createNetworkClient(urlBase : String): Retrofit {
     httpClient.addInterceptor(logging)
     return Retrofit.Builder()
         .baseUrl(urlBase)
+        .client(httpClient.build())
         .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
         .addCallAdapterFactory(CoroutineCallAdapterFactory())
         .build()

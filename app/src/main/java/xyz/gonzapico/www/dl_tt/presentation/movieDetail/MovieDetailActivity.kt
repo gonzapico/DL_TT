@@ -54,7 +54,11 @@ class MovieDetailActivity : BaseActivity() {
             }
 
             supportFragmentManager.beginTransaction()
-                .add(R.id.item_detail_container, fragment)
+                .add(R.id.item_detail_container, fragment, "prueba")
+                .commit()
+        } else {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.item_detail_container, supportFragmentManager.findFragmentByTag("prueba")!!)
                 .commit()
         }
     }

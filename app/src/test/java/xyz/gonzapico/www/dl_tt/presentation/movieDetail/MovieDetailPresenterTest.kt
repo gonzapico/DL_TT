@@ -29,7 +29,7 @@ class MovieDetailPresenterTest {
     private lateinit var mockMovieDetailUseCase: GetMovieDetailUseCase
 
     val idIMDB = "tt8531916"
-    val expectedInfo = Movie("", "", "", imdbId = idIMDB)
+    val expectedInfo = Movie("", "", idIMDB, "")
     private val testDispatcher = TestCoroutineDispatcher()
     @Before
     fun setUp() {

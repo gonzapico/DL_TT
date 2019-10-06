@@ -6,17 +6,12 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.TestCoroutineDispatcher
 import kotlinx.coroutines.test.runBlockingTest
 import kotlinx.coroutines.test.setMain
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
-import xyz.gonzapico.www.dl_tt.domain.GetMovieDetailUseCase
 import xyz.gonzapico.www.dl_tt.domain.GetMovieListUseCase
-import xyz.gonzapico.www.dl_tt.presentation.movieDetail.MovieDetailPresenter
-import xyz.gonzapico.www.dl_tt.presentation.movieDetail.MovieDetailView
-import xyz.gonzapico.www.dl_tt.presentation.movieList.model.Movie
 import xyz.gonzapico.www.dl_tt.presentation.movieList.model.MovieList
 
 class MovieListPresenterTest {

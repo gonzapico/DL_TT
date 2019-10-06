@@ -3,7 +3,7 @@ package xyz.gonzapico.www.dl_tt.data.model
 import com.google.gson.annotations.SerializedName
 import xyz.gonzapico.www.dl_tt.domain.models.MovieDataModel
 
-data class Movie(
+data class MovieEntity(
     @SerializedName("Poster")
     val poster: String,
     @SerializedName("Title")
@@ -15,7 +15,6 @@ data class Movie(
     val imdbID: String
 ) {
     fun transformToDomain(): MovieDataModel {
-        return MovieDataModel(title, imdbID, poster)
-
+        return MovieDataModel(title, year, imdbID)
     }
 }

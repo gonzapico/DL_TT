@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 import xyz.gonzapico.www.dl_tt.domain.models.MovieDataModel
 import xyz.gonzapico.www.dl_tt.domain.models.RatingDomainModel
 
-data class MovieDetail(
+data class MovieDetailEntity(
     val Actors: String,
     val Awards: String,
     val BoxOffice: String,
@@ -32,17 +32,19 @@ data class MovieDetail(
     val imdbVotes: String
 ) {
     fun transformToDomain(): MovieDataModel? {
-        return MovieDataModel(Title, imdbID, Poster, Director, Runtime, "")
+        return MovieDataModel(Title, Year, imdbID, Poster, Ratings.map{
+            it.transformToDomain()
+        })
     }
 }
 
 data class Rating(
-    @SerializedName("source")
+    @SerializedName("Source")
     val source: String,
-    @SerializedName("value")
+    @SerializedName("Value")
     val value: String
 ) {
-    fun transformToDomain() : RatingDomainModel?{
+    fun transformToDomain() : RatingDomainModel{
         return RatingDomainModel(source, value)
     }
 }

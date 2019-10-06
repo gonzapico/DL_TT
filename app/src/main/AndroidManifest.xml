@@ -16,6 +16,7 @@
         <activity
             android:name=".presentation.movieList.MovieListActivity"
             android:label="@string/app_name"
+            android:configChanges="orientation|keyboardHidden"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,6 +27,7 @@
         <activity
             android:name=".presentation.movieDetail.MovieDetailActivity"
             android:label="@string/app_name"
+            android:configChanges="orientation|keyboardHidden"
             android:parentActivityName=".presentation.movieList.MovieListActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data

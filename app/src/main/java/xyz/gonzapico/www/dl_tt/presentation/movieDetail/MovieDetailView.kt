@@ -1,10 +1,8 @@
 package xyz.gonzapico.www.dl_tt.presentation.movieDetail
 
-import xyz.gonzapico.www.dl_tt.presentation.IPresenterView
 import xyz.gonzapico.www.dl_tt.presentation.movieList.model.Movie
-import xyz.gonzapico.www.dl_tt.presentation.movieList.model.MovieList
 
-interface MovieDetailView : IPresenterView {
+interface MovieDetailView {
     fun showLoading()
 
     fun hideLoading()

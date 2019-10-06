@@ -1,24 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    style="?android:attr/textAppearanceLarge"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:padding="16dp"
     android:textIsSelectable="true"
-    tools:context=".presentation.movieDetail.MovieDetailFragment" >
+    tools:context=".presentation.movieDetail.MovieDetailFragment">
 
 
     <ImageView
         android:id="@+id/poster"
-        android:scaleType="centerCrop"
-        android:layout_width="wrap_content"
-        android:layout_height="300dp"/>
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="300dp"
+        android:layout_height="450dp"
+        android:scaleType="centerCrop" />
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/poster"
+        android:id="@+id/rating_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:scrollIndicators="bottom"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_list_content" />
+
+    <LinearLayout
+        android:padding="8dp"
+        android:layout_toEndOf="@id/poster"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/title"/>
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+
+        <TextView
+            android:id="@+id/director"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
 
-</LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
