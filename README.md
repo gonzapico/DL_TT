@@ -11,7 +11,7 @@ The app is available for tablet (landscape and portrait) and mobile (just portra
 Architecture
 =================================
 
-I follow the principles of Clean Architecture to do the separation of concerns. 
+I follow the principles of Clean Architecture. 
 
 
 ![Clean Architecture Layers](http://notes.lucida.me/images/clean_arc_android/layers.png)
@@ -57,11 +57,11 @@ The views are interfaces that are implemented by the screen (_Activities_ or _Fr
 
 
 Testing
----------------
+=======
 I use JUnit among Mockito in order to have tests in at least all the layers of the architecture.
 
 
-================================
+---------------------------
 
 #### Tools
 * AndroidX
@@ -74,7 +74,7 @@ I use JUnit among Mockito in order to have tests in at least all the layers of t
 
 You can check all them out in the _buildsytem/dependencies.gradle_ file
 
-=================================
+------------------------------
 
 #### What should be done next?
 
