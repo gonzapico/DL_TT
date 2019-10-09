@@ -31,6 +31,7 @@ import xyz.gonzapico.www.dl_tt.presentation.toggle
 class MovieDetailFragment : Fragment(), MovieDetailView {
 
     val KEY_MOVIE_LOADED = "KEY_MOVIE_LOADED"
+    val KEY_FILM = "film"
 
     private val movieDetailPresenter : MovieDetailPresenter by inject()
 
@@ -50,7 +51,7 @@ class MovieDetailFragment : Fragment(), MovieDetailView {
             }
         }
 
-        this.arguments?.putParcelable("film", movieDetail)
+        this.arguments?.putParcelable(KEY_FILM, movieDetail)
     }
 
     private fun setUpUI(it: Movie?) {
@@ -112,7 +113,7 @@ class MovieDetailFragment : Fragment(), MovieDetailView {
     override fun onResume() {
         super.onResume()
 
-        if (this.arguments?.getParcelable<Movie?>("film") != null)
+        if (this.arguments?.getParcelable<Movie?>(KEY_FILM) != null)
             this.renderMovie(this.arguments?.getParcelable<Movie?>("film"))
 
 
@@ -124,5 +125,6 @@ class MovieDetailFragment : Fragment(), MovieDetailView {
          * represents.
          */
         const val ARG_ITEM_ID = "item_id"
+        const val FRAGMENT_TAG = "films_tag"
     }
 }

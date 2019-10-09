@@ -28,6 +28,7 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="@dimen/text_margin"
         android:layout_marginRight="@dimen/text_margin"
+        android:scrollIndicators="bottom"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_list_content" />
 
